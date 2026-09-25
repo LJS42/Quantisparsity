@@ -5,31 +5,6 @@ It consumes the **installed GPUBoscia package** through CMake, without a source
 checkout, submodule, or vendored copy of the solver. The default problem has
 576 weights per row (excluding indicators), suitable for CIFAR-10 ResNet20.
 
-## Make this a separate repository
-
-Copy **this whole directory** into your new repository. For example, from the
-GPUBoscia checkout, on your machine:
-
-```bash
-cp -a standalone/quantization_sparse ../quantization_sparse
-cd ../quantization_sparse
-git init -b main
-git add .
-git commit -m "Initialize standalone quantization experiment"
-```
-
-Then connect it to your chosen remote in the usual way. No remote URL is assumed
-here. This directory contains no nested Git repository; its local placement under
-`standalone/` is only for handoff. Moving it does not change its build commands.
-Generated build files, downloaded data, Python caches, and results are ignored.
-
-You will have two repositories:
-
-```text
-GPUBoscia/                 General solver library
-quantization_sparse/      Objective, sparsity oracle, experiments, and their tests
-```
-
 ## 1. Install GPUBoscia once
 
 On the CUDA machine, configure the **GPUBoscia repository**, not this experiment:
