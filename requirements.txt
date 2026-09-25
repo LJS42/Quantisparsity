@@ -1,0 +1,4 @@
+# Only preparation/evaluation need these packages. The CUDA runner uses stdlib.
+numpy
+torch
+torchvision
